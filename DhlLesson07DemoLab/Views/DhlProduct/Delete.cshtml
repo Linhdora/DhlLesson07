@@ -1,0 +1,23 @@
+@model DhlLesson07DemoLab.Models.DhlProduct
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<h2>Bạn có chắc chắn muốn xóa sản phẩm này?</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">Tên sản phẩm</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Hình ảnh</dt>
+    <dd class="col-sm-9"><img src="~/products/@Model.Image" width="150" /></dd>
+
+    <dt class="col-sm-3">Giá</dt>
+    <dd class="col-sm-9">@Model.Price</dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

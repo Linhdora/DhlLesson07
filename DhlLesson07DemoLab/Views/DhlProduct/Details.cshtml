@@ -1,0 +1,33 @@
+@model DhlLesson07DemoLab.Models.DhlProduct
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<dl class="row">
+    <dt class="col-sm-3">Id</dt>
+    <dd class="col-sm-9">@Model.Id</dd>
+
+    <dt class="col-sm-3">Tên sản phẩm</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Hình ảnh</dt>
+    <dd class="col-sm-9"><img src="~/products/@Model.Image" width="200" /></dd>
+
+    <dt class="col-sm-3">Giá</dt>
+    <dd class="col-sm-9">@Model.Price</dd>
+
+    <dt class="col-sm-3">Giá khuyến mãi</dt>
+    <dd class="col-sm-9">@Model.SalePrice</dd>
+
+    <dt class="col-sm-3">Danh mục</dt>
+    <dd class="col-sm-9">@ViewBag.CategoryName</dd>
+
+    <dt class="col-sm-3">Mô tả</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>
